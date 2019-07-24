@@ -1,2 +1,2 @@
 # CCPD
-Crome Cookie Paasword Dump
+Chrome Cookie Paasword Dump
