@@ -1,2 +1,2 @@
 # CCPD
-Chrome Cookie Pasword Dump
+Chrome Cookie Password Dump
