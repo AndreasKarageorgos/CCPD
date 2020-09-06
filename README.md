@@ -8,6 +8,6 @@ You can rename the file from C.C.P.D-windows.py to C.C.P.D-windows.pyw if you do
 Do not use it for any malicious acts.
 ## executable file.
   
-  pip3 install pyinstaller
+    pip3 install pyinstaller
   
-  pyinstaller -F C.C.P.D-windows.py
+    pyinstaller -F C.C.P.D-windows.py
